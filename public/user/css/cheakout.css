@@ -1,0 +1,392 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Assistant, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+    Helvetica, Arial, sans-serif;
+  box-sizing: border-box;
+}
+
+.cotainer_body {
+  height: 100vh;
+  width: 100vw;
+
+  display: grid;
+  grid-template-rows: 4rem auto 20rem;
+  overflow: auto;
+}
+.container {
+  border: 1px solid gray;
+}
+
+/* hader */
+.header {
+  max-height: 4rem;
+  /* line-height: 5rem; */
+
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+.navbar {
+  position: fixed;
+  background-color: rgb(94, 30, 66);
+  z-index: 999;
+
+  top: 0;
+  min-width: 100vw;
+
+  list-style: none;
+  display: flex;
+
+  min-height: 4rem;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.emart_logo {
+  /* padding: 1rem; */
+  border: 0;
+  color: white;
+  font-size: xx-large;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+}
+.emart_logo_star {
+  height: 45px;
+  vertical-align: top;
+}
+.action_container {
+  display: flex;
+  color: rgb(219, 219, 219);
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.bag_item_count {
+  background-color: #f16565;
+  white-space: nowrap;
+  text-align: center;
+  line-height: 18px;
+  padding: 0 6px;
+  height: 18px;
+  position: relative;
+  border-radius: 50%;
+  font-size: 12px;
+  color: #fff;
+  left: 13px;
+  top: -44px;
+  font-weight: 700;
+  cursor: pointer;
+}
+.action_container:hover {
+  background: rgb(0, 82, 161);
+  border-radius: 15%;
+
+  color: rgb(255, 255, 255);
+}
+.action_bar {
+  margin-right: 0%;
+  display: flex;
+  min-width: 200px;
+  justify-content: space-evenly;
+}
+.search_bar {
+  height: 40px;
+  min-width: 200px;
+  width: 30%;
+  display: flex;
+  align-items: center;
+}
+.search_icon {
+  box-sizing: content-box;
+  height: 20px;
+  padding: 10px;
+
+  background-color: #f5f5f6;
+  color: #282c3f;
+  font-weight: 300;
+  border-radius: 4px 0 0 4px;
+}
+.search_input {
+  color: #696e79;
+  background-color: #f5f5f6;
+  flex-grow: 1;
+  height: 40px;
+  width: 25rem;
+  border: 0;
+  border-radius: 0 4px 4px 0;
+}
+
+/* main objective */
+.cantaint {
+  padding: 2rem;
+  display: flex;
+
+  height: auto;
+  min-width: 80vw;
+  flex-direction: row;
+}
+.main_item_conatint {
+  margin: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 70%;
+  border-radius: 5px;
+}
+.addres_containt {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  min-height: 4rem;
+  margin-bottom: 1rem;
+  background-color: white;
+}
+.data {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.btn {
+  display: flex;
+  padding: 1rem;
+
+  align-content: center;
+}
+.btn > button {
+  padding: 0 1rem;
+  color: rgb(40, 116, 240);
+  background-color: white;
+  border-radius: 5px;
+  border: 0.5px solid rgb(135, 135, 135);
+}
+.btn > button:hover {
+  box-shadow: 0px 0px 10px 0px rgb(201 196 196);
+}
+.addres {
+  color: rgb(135, 135, 135);
+}
+
+.cart_contanit {
+  width: 100%;
+  height: auto;
+  background-color: white;
+}
+.items_cantaint {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 15rem;
+  padding: 1rem;
+
+  height: 100%;
+  width: 100%;
+}
+.item {
+  display: flex;
+
+  height: 100%;
+  width: 100%;
+}
+.p_img {
+  /* display: flex; */
+  /* justify-content: center;
+    align-items: center; */
+  position: relative;
+
+  height: 10rem;
+  width: 30%;
+}
+.p_img > img {
+  position: absolute;
+  inset: 0px;
+  margin: auto;
+  opacity: 1;
+  box-shadow: 1px 1px 1px 1px gray;
+
+  height: 112px;
+  width: 112px;
+}
+
+.p_data {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+
+  height: 100%;
+  width: 70%;
+  gap: 0.5rem;
+}
+.p_name {
+  font-weight: 600;
+
+  font-size: 16px;
+  color: #212121;
+  line-height: 1;
+
+  height: 100%;
+  width: 100%;
+}
+.subname {
+  display: block;
+  color: #878787;
+  font-size: 14px;
+  height: 20px;
+
+  height: 100%;
+  width: 100%;
+}
+.price {
+  height: 100%;
+  width: 100%;
+}
+
+.oprice {
+  color: #878787;
+  text-decoration: line-through;
+}
+
+.dprice {
+  font-size: 18px;
+  font-weight: 500;
+  color: #212121;
+}
+.discount {
+  font-weight: 500;
+  color: #388e3c;
+}
+.qantity {
+  display: flex;
+  color: #212121;
+  align-items: center;
+}
+.qantity_in {
+  display: flex;
+
+  justify-content: start;
+  padding: 0.5rem 1rem;
+}
+.sign > button {
+  width: 28px;
+  height: 28px;
+  background: linear-gradient(#fff, #f9f9f9);
+  display: inline-block;
+  border: 1px solid #c2c2c2;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 50%;
+  padding-top: 1px;
+  line-height: 1;
+}
+.no > input {
+  display: inline-block;
+  padding: 3px 6px;
+  width: calc(100% - 60px);
+  height: 100%;
+  width: 46px;
+  height: 28px;
+  border-radius: 2px;
+  background-color: #fff;
+  border: 1px solid #c2c2c2;
+  margin: 0 5px;
+}
+
+.quntiy_sar {
+  display: flex;
+  gap: 1rem;
+}
+
+.btns > button {
+  text-transform: uppercase;
+  box-shadow: none;
+  outline: 0;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  margin-right: 25px;
+  border: 0;
+  background-color: #f5f5f600;
+}
+.btns > button:hover {
+  color: rgb(40, 116, 240);
+}
+
+.order_containt {
+  display: flex;
+  padding: 1rem;
+
+  justify-content: end;
+  position: sticky;
+  bottom: 0;
+  width: 100%;
+  min-height: 5rem;
+  background-color: white;
+  box-shadow: 0px -2px 9px 0px #c2c2c2;
+}
+.order_containt > button {
+  color: white;
+  border: 0;
+  font-size: medium;
+  padding: 0 4rem;
+  font-weight: 600;
+  background-color: rgb(251, 100, 27);
+}
+.order_containt > button:hover {
+  background-color: rgb(218, 83, 15);
+}
+
+.price_cantaint {
+  position: sticky;
+  top: 0%;
+  align-self: start;
+
+  width: 30%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+
+  min-height: 20rem;
+  background-color: white;
+  margin: 0.5rem;
+  border-radius: 5px;
+}
+.table_style {
+  padding: 1rem;
+}
+.table_head {
+  color: rgb(135, 135, 135);
+  text-align: start;
+
+  border-bottom: 1px dashed gray;
+}
+
+#f_price {
+  font-weight: 700;
+  border-top: 1px dashed gray;
+  border-bottom: 1px dashed gray;
+}
+.table_last {
+  font-weight: 600;
+}
+.green {
+  color: rgb(74, 152, 78);
+}
+.stric {
+  color: rgb(135, 135, 135);
+  text-decoration: line-through;
+}
+.main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(241, 243, 246);
+  border: 0;
+
+  grid-column-start: 1;
+  grid-column-end: 3;
+}

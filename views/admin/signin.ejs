@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Registration</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+	</script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="/admin/css/style.css">
+
+
+	<script type="text/javascript">
+	document.addEventListener("DOMContentLoaded", function() {
+    document.querySelector("#form1").addEventListener("submit", function(event) {
+        event.preventDefault();
+
+        fetch("/adminRagister", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/x-www-form-urlencoded"
+            },
+            body: new URLSearchParams(new FormData(event.target))
+        })
+        .then(response => response.json())
+        .then(data => {
+            document.querySelector("#form1").reset();
+            document.querySelector("#check").innerHTML = data.Success;
+            setTimeout(() => {
+                document.querySelector("#check").innerHTML = "";
+            }, 3000);
+            if (data.Success === "You are regestered,You can login now.") {
+                document.querySelector("#aa").click();
+            }
+        })
+        .catch(error => {
+            console.error("Error:", error);
+        });
+    });
+});
+
+	</script>
+</head>
+<body>
+
+	<div class="col-md-4 col-md-offset-4">
+		<div>
+			<p>Register Now
+			</p>
+		</div>
+		<div class="form-group">
+			<form id="form1" method="post">
+				<input type="email" name="email" placeholder="E-mail" required="" class="form-control"><br/>
+				<input type="text" name="username" placeholder="Username" required="" class="form-control"><br/>
+				<input type="password" name="password" placeholder="Password" required="" class="form-control"><br/>
+				<input type="password" name="passwordConf" placeholder="Confirm Password" required="" class="form-control"><br/>
+				<input type="submit" value="Register" class="btn btn-success">
+			</form>
+		</div>
+		
+		<div class="mssg bg-danger">
+			<span id="check"></span>
+		</div>
+		<div>
+			<span>Already Registered! <a href="/adminLogin">Login</a></span>
+		</div>
+		<div id="LangTable"><a href="/login" id="aa"></a>
+		</div>
+	</div>
+</body>
+</html>

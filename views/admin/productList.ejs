@@ -1,0 +1,68 @@
+<!-- views/productList.ejs -->
+
+<html>
+<head>
+  <title>Product List</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+   
+   
+  </style>
+</head>
+<body>
+  <!-- include header -->
+<%- include('_header') %>
+<!-- /include header -->
+
+  
+  <h3 class="heading">Product List order by user</h3>
+  <table>
+    <tr>
+      <th>Username</th>
+      <th>Items No</th>
+      <th>Items IDs</th>
+      <th>Items Names</th>
+      <th>Total Price</th>
+      <th>Total Discount</th>
+      <th>Total Discount Price</th>
+      <th>Status</th>
+      <th>order At</th> <!-- Add this new column -->
+    </tr>
+    <% products.forEach(product => { %>
+      <tr>
+        <td class="clickable" onclick="goToUserList('<%= product.username %>')">
+          <%= product.username %>
+        </td>
+        <td><%= product.itemsno %></td>
+        <td>
+          <ul class="itemlist">
+            <% product.itemsids.forEach(item => { %>
+              <li><%= item %></li>
+            <% }); %>
+          </ul>
+        </td>
+        <td>
+          <ul  class="itemlist">
+            <% product.itemsnames.forEach(item => { %>
+              <li><%= item %></li>
+            <% }); %>
+          </ul>
+        </td>
+        <td><%= product.totalprice %></td>
+        <td><%= product.totaldiscount %></td>
+        <td><%= product.totaldiscountprice %></td>
+        <td class="Order"> ORDER PLACED</td>
+        <td><%= product.createdAt %></td> <!-- Display the timestamp -->
+      </tr>
+    <% }); %>
+  </table>
+
+
+  <script>
+    function goToUserList(param) {
+      // Assuming you want to navigate to a user list page with the parameter
+      window.location.href = '/userList?param=' + param;
+    }
+  </script>
+</body>
+</html>

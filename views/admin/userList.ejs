@@ -1,0 +1,59 @@
+<!-- views/userList.ejs -->
+
+
+<html>
+<head>
+  <title>Product List</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+   
+   
+  </style>
+</head>
+<body>
+  <!-- include header -->
+<%- include('_header') %>
+
+
+  <h3 class="heading">User data List</h3>
+  <table>
+    <tr>
+      <th>Username</th>
+      <th>Full Name</th>
+      <th>Email</th>
+      <th>address</th>
+      <th>District</th>
+      <th>zip</th>
+      <th>State</th>
+      <th>CCName</th>
+      <th>CCCVV</th>
+      <th>CCExpiration</th>
+
+
+
+     
+    </tr>
+    <% users.forEach(user => { %>
+      <tr>
+        <td><%= user.username %></td>
+        <td><%= user.fullName %></td>
+        <td><%= user.email %></td>
+        <td><%= user.address %></td>
+        <td><%= user.district %></td>
+        <td><%= user.zip %></td>
+        <td><%= user.state %></td>
+        <td><%= user.ccname %></td>
+        <td><%= user.cccvv %></td>
+        <td><%= user.ccexpiration %></td>
+       
+       
+        
+        
+        
+      
+      </tr>
+    <% }); %>
+  </table>
+  
+</body>
+</html>

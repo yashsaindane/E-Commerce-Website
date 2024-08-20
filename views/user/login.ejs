@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>emart_login</title>
+
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="/user/css/style.css">
+    <script src="/user/js/script.js" defer></script>
+</head>
+
+<body>
+    <div class="cotainer_body">
+        <!-- Header -->
+        <div class="container header">
+            <ul class="navbar">
+                <li class="logo_container">
+                    <span class="emart_logo">Emart</span></span><sup><img
+                            class="emart_logo_star" src="/user/image/emart_logo.png" alt="emartlogo"></sup>
+                </li>
+                <a  class="admin_container" href="/adminLogin">Admin </a>
+            </ul>
+        </div>
+
+        <!-- Main Content -->
+        <div class="cotn_principal main">
+            <img class="bgimg" src="./user/image/login bg.jpg" alt="">
+            <div class="cont_centrar">
+
+                <div class="cont_login">
+                    <div class="cont_info_log_sign_up">
+                        <div class="col_md_login">
+                            <div class="cont_ba_opcitiy">
+                                <button class="btn_login" onclick="change_to_login()">LOGIN</button>
+                            </div>
+                        </div>
+                        <div class="col_md_sign_up">
+                            <div class="cont_ba_opcitiy">
+                                <button class="btn_sign_up" onclick="change_to_sign_up()">SIGN UP</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="cont_back_info">
+                        <div class="cont_img_back_grey"></div>
+                    </div>
+
+                    <div class="cont_forms">
+                        <form id="login-form">
+                            <div class="cont_form_login">
+                                <a href="#" onclick="hidden_login_and_sign_up()"><i class="material-icons">&#xE5C4;</i></a>
+                                <h2>LOGIN</h2>
+                                <input type="text" id="lusername" name="lusername" required>
+                                <input type="password" id="lpassword" name="lpassword" required>
+                                <button class="btn_login" type="submit" onclick="change_to_login()">LOGIN</button>
+                            </div>
+                        </form>
+                        <p id="lmessage"></p>
+
+                        <form id="registration-form">
+                            <div class="cont_form_sign_up">
+                                <a href="#" onclick="hidden_login_and_sign_up()"><i class="material-icons">&#xE5C4;</i></a>
+                                <h2>SIGN UP</h2>
+                                <input type="text" id="rusername" name="rusername" required>
+                                <input type="password" id="rpassword" name="rpassword" required>
+                                <button class="btn_sign_up" type="submit" onclick="change_to_login()">SIGN UP</button>
+                            </div>
+                        </form>
+                        <p id="rmessage"></p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+
+</html>
